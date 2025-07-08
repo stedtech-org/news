@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <title>StedTech</title>
     <meta charset="UTF-8">
+    <title>StedTech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo.png">
     <style>
@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-color: #f9f9f9;
         }
         header {
             background-color: rgba(255, 255, 255, 0.8);
@@ -41,12 +42,11 @@
             text-decoration: underline;
         }
         .head-img {
-            width: 200px; /* ロゴの幅を調整 */
+            width: 200px;
             height: auto;
         }
         .main {
-            padding: 100px 20px 20px; /* ヘッダーの高さを考慮してパディングを調整 */
-            background-color: #f9f9f9;
+            padding: 100px 20px 20px;
         }
         footer {
             background-color: #333;
@@ -59,14 +59,14 @@
         .top {
             position: relative;
             text-align: center;
-            margin-top: 60px; /* ヘッダーが固定されるためのマージンを追加 */
+            margin-top: 60px;
         }
         .top-img {
             width: 50%;
             height: auto;
             z-index: 0;
         }
-         .news{
+        .news {
             text-align: center;
             text-decoration: underline;
             color: #000ff;
@@ -94,6 +94,35 @@
             color: #666;
         }
 
+        /* --- ニュースカードデザイン --- */
+        .section.about {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+        .section.about:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        .section.about h2 {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .section.about p {
+            font-size: 0.95em;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .section.about a {
+            color: #0366d6;
+            font-weight: bold;
+        }
+        .section.about a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -107,57 +136,62 @@
         </nav>
     </div>
 </header>
-<div class="top">
 
-</div>
+<div class="top"></div>
+
 <div class="main">
     <div id="home" class="section home">
         <h2>StedTechNews</h2>
         <p>StedTechのニュースや情報です。</p>
         <p>色々な情報や活動報告などがあるのでぜひ見てください</p>
     </div>
+
     <h1 class="news">News</h1>
     <div id="news">
-         <div id="about" class="section about">
-        <h2><span style="color: red;">New!</span> StedTech-PublicRelations div.(広報部)が公式X(旧Twitter)を公開</h2>
-       <p>2025/01/07</p> 
-        
-             <p>このたびStedTechOrganization公式Xを開設いたしました。</p>
-             <p>ぜひフォローをお願いしたします。</p>
-              <p>X(旧Twitter):<a href="https://x.com/stedtechorg">@stedtechorg</a></p>
-    </div>  
-        <div id="about" class="section about">
-        <h2> StedTech-Engineering div.がAaaLangを公開</h2>
-       <p>2024/12/12</p> 
-       <p>自作言語AaaLangを公開しました。</p>
-        <p>BrainF*ckがベースで、AAAと叫ぶことでプログラミングできます。</p>
-              <p>詳細はこちら:<a href="https://github.com/Atsu1209/Aaa">Github</a></p>
-    </div> 
-   <div id="about" class="section about">
-        <h2>Qiita内のOrganization月間ランキングにて6位を獲得</h2>
-       <p>2024/12/3</p> 
-       <p>StedTechはQiitaのOrganizationにて11月の月間ランキングで6位を獲得しました。</p>
-        <p>StedTechのQiitaは学生2人で運営しているので、ランキング上位に掲載されることはとても嬉しく思います。</p>
-       <p>今後とも活動を続けていきますので、ご支援とご協力をお願いいたします。</p>
+        <div class="section about">
+            <h2><span style="color: red;">New!</span> StedTech-PublicRelations div.(広報部)が公式X(旧Twitter)を公開</h2>
+            <p>2025/01/07</p> 
+            <p>このたびStedTechOrganization公式Xを開設いたしました。</p>
+            <p>ぜひフォローをお願いしたします。</p>
+            <p>X(旧Twitter): <a href="https://x.com/stedtechorg" target="_blank">@stedtechorg</a></p>
+        </div>  
+
+        <div class="section about">
+            <h2>StedTech-Engineering div.がAaaLangを公開</h2>
+            <p>2024/12/12</p> 
+            <p>自作言語AaaLangを公開しました。</p>
+            <p>BrainF*ckがベースで、AAAと叫ぶことでプログラミングできます。</p>
+            <p>詳細はこちら: <a href="https://github.com/Atsu1209/Aaa" target="_blank">GitHub</a></p>
+        </div> 
+
+        <div class="section about">
+            <h2>Qiita内のOrganization月間ランキングにて6位を獲得</h2>
+            <p>2024/12/3</p> 
+            <p>StedTechはQiitaのOrganizationにて11月の月間ランキングで6位を獲得しました。</p>
+            <p>StedTechのQiitaは学生2人で運営しているので、ランキング上位に掲載されることはとても嬉しく思います。</p>
+            <p>今後とも活動を続けていきますので、ご支援とご協力をお願いいたします。</p>
+        </div>
+
+        <div class="section about">
+            <h2>StedTechゲーム開発開始</h2>
+            <p>2024/7/10</p> 
+            <p>現在2Dゲームの開発を開始しました。</p>
+            <p>今後も随時情報をお届けします。</p>
+        </div>
+
+        <div class="section about">
+            <h2>StedTechホームページを開設</h2>
+            <p>このたびStedTechはホームページを作成しました。</p>
+            <p>今後は色々な情報を発信していきます!</p>
+        </div>
     </div>
-        <div id="about" class="section about">
-        <h2>StedTechゲーム開発開始</h2>
-       <p>2024/7/10</p> 
-       <p>現在2Dゲームの開発を開始しました</p>
-        <p>今後も随時情報をお届けします。</p>
-    </div>
-    <div id="about" class="section about">
-        <h2>StedTechホームページを開設</h2>
-        <p>このたびStedTechはホームページを作成しました。</p>
-        <p>今後は色々な情報を発信していきます!</p>
-    </div>
-    </div>
+</div>
+
 <footer>
     <p>StedTech Organization: Learn & Enjoy</p>
     <p>&copy; 2024-2025 StedTech. All rights reserved.</p>
 </footer>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
