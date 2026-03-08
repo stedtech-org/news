@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo.png">
     <style>
+        .mem,.screenshots-section {
+            margin-top: 40px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+       .mem,h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        .mem-grid {
+            display: flex;
+            flex-wrap: nowrap; /* 折り返しなしで横並び */
+            justify-content: center; /* 中央揃え */
+            gap: 40px;
+            overflow-x: auto; /* 画面幅を超える場合スクロール可能に */
+        }
+
+        .mem-grid img {
+            width: 150px; /* 画像の幅を統一 */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #x,#you{
+            height: 50px;
+        }
+        #newsimg{
+            margin-top: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -215,42 +248,21 @@
 </header>
 
 <div class="top"></div>
-
-
-  <section id="news" class="news-section">
-    <div class="container">
-        <h2>ニュース</h2>
-        <div class="news-grid">
-            <ul id="news-list">
-                <!-- ニュース項目がここに表示 -->
-            </ul>
-        </div>
-    </div>
-</section>
-
+ <section id="mem" class="mem-section screenshots-section ">
+        <div class="container">
+            <img src="img/stedx2.png" id="newsimg">
+            <h2>StedTech-PublicRelations div.(広報部)が公式X(旧Twitter)を公開</h2>
+            <p>2025/01/07</p> 
+            <p>このたびStedTechOrganization公式Xを開設いたしました。</p>
+            <p>ぜひフォローをお願いしたします。</p>
+            <p>X(旧Twitter): <a href="https://x.com/stedtechorg" target="_blank">@stedtechorg</a></p>
+            </div>
+    </section>
 <footer>
     <p>StedTech Organization: Learn & Enjoy</p>
     <p>&copy; 2024-2026 StedTech. All rights reserved.</p>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="content.js"></script>
-    <script>
-    const newsList = document.getElementById("news-list");
-    newsData.forEach((news, index) => {
-        const li = document.createElement("li");
-        li.className = "news-item-wrapper";
-        li.innerHTML = `
-            <a href="${news.link}" class="news-item">
-                <img src="${news.image}" alt="${news.title}">
-                <div class="news-content">
-                    <span class="news-date">${news.date}</span>
-                    <h3>${news.title}</h3>
-                </div>
-            </a>
-        `;
-        newsList.appendChild(li);
-    });
-</script>
 </body>
 </html>
