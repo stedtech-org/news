@@ -1,4 +1,5 @@
 const newsData = [
+    { title: "電気通信事業者の届出のお知らせ", date: "2026/05/26", link: "item/2026/3/index.html", image: "img/item/stednew.png" },
     { title: "StedTechOrganization™ 3rd Anniversary.", date: "2026/03/04", link: "item/2026/2/index.html", image: "img/item/sted3rd.png" },
     { title: "StedTech Pen Spinning Division 発足", date: "2026/02/27", link: "item/2026/1/index.html", image: "img/item/pendiv.png" },
     { title: " StedTechStandard'STST'販売開始", date: "2025/11/01", link: "item/2025/2/index.html", image: "img/item/STST.png" },

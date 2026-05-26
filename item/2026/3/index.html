@@ -1,0 +1,311 @@
+    <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>StedTech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png">
+    <style>
+        .mem,.screenshots-section {
+            margin-top: 40px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+       .mem,h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        .mem-grid {
+            display: flex;
+            flex-wrap: nowrap; /* 折り返しなしで横並び */
+            justify-content: center; /* 中央揃え */
+            gap: 40px;
+            overflow-x: auto; /* 画面幅を超える場合スクロール可能に */
+        }
+
+        .mem-grid img {
+            width: 150px; /* 画像の幅を統一 */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #x,#you{
+            height: 50px;
+        }
+        #newsimg{
+            margin-top: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 15px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .head-img {
+            width: 200px;
+            height: auto;
+        }
+        .main {
+            padding: 100px 20px 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+        .top {
+            position: relative;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .top-img {
+            width: 50%;
+            height: auto;
+            z-index: 0;
+        }
+        .news {
+            text-align: center;
+            text-decoration: underline;
+            color: "#000ff";
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .section p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            padding-left: 20px;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        /* --- ニュースカードデザイン --- */
+        .section.about {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+        .section.about:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        .section.about h2 {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .section.about p {
+            font-size: 0.95em;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .section.about a {
+            color: #0366d6;
+            font-weight: bold;
+        }
+        .section.about a:hover {
+            text-decoration: underline;
+        }
+
+           .news-section {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #fff;
+    }
+    .news-section h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .news-section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .news-item-wrapper {
+        width: 100%;
+        max-width: 380px;
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+    .news-item-wrapper:hover {
+        transform: translateY(-5px);
+    }
+    .news-item {
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+    .news-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* アスペクト比を16:9に固定 */
+    object-fit: cover;    /* はみ出る部分をトリミング */
+    display: block;
+    }
+
+    .news-content {
+        padding: 15px;
+        text-align: left;
+    }
+    .news-date {
+        display: block;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+    .news-content h3 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    @media (max-width: 900px) {
+        .news-section ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .news-section ul {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    /* スマホ用 */
+@media (max-width: 600px) {
+
+    header {
+        padding: 10px;
+    }
+
+    .head-img {
+        width: 150px;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .mem-section {
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    #newsimg{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 15px 10px;
+    }
+
+}
+    </style>
+</head>
+<body>
+<header>
+    <div class="header">
+        <a href="https://stedtech-org.github.io/home"><img class="head-img" src="img/StedTech.png" alt="StedTech Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="https://stedtech-org.github.io/home">Home</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="top"></div>
+ <section id="mem" class="mem-section screenshots-section ">
+        <div class="container">
+            <img src="img/stednew.png" id="newsimg">
+            <h2>電気通信事業者の届出のお知らせ</h2>
+            <p>2026/05/26</p> 
+            <p>このたびStedTechは、総務省へ電気通信事業者の届出を行い、</p>
+            <p>無事に届出番号の通知を受領しましたのでお知らせいたします。</p>
+            <p><strong>届出番号:A-08-23539</strong></p>
+            <p>今後とも、より良いサービスの提供に努めてまいりますのでよろしくお願いします。</p>
+            </div>
+    </section>
+<footer>
+    <p>StedTech Organization: Learn & Enjoy</p>
+    <p>&copy; 2024-2026 StedTech. All rights reserved.</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
