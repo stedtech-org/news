@@ -253,14 +253,13 @@
     });
 </script>
 <script>
-    const path = window.location.pathname.replace(/^\/news/, "");
 
-    window.location.replace(
-      "https://stedtech.com/news" +
-      path +
-      window.location.search +
-      window.location.hash
-    );
+window.location.replace(
+  "https://stedtech.com" +
+  window.location.pathname +
+  window.location.search +
+  window.location.hash
+);
 </script>
 </body>
 </html>
